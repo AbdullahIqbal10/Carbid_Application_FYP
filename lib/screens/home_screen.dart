@@ -112,35 +112,37 @@ Widget chips(String text) {
 }
 
 Widget home_tiles() {
-  return Container(
-      height: 200,
-      width: 185,
-      margin: EdgeInsets.all(10),
-      decoration: BoxDecoration(
-          color: GlobalVariables.textfeildColor,
-          borderRadius: BorderRadius.circular(10)),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Image(image: AssetImage('assets/images/car1.webp')),
-          SizedBox(
-            height: 25,
-          ),
-          Text(
-            '   Car Name',
-            style: TextStyle(fontFamily: semibold, fontSize: 17),
-          ),
-          Container(
-            margin: EdgeInsets.only(left: 10, right: 10),
-            width: double.infinity,
-            child: Container(
-                child: ElevatedButton(
-                    onPressed: () {},
-                    child: Text('Bid Now'),
-                    style: ElevatedButton.styleFrom(
-                      primary: GlobalVariables.kPrimaryColor,
-                    ))),
-          )
-        ],
-      ));
+  return Expanded(
+    child: Container(
+        height: 200,
+        width: 185,
+        margin: EdgeInsets.all(10),
+        decoration: BoxDecoration(
+            color: GlobalVariables.textfeildColor,
+            borderRadius: BorderRadius.circular(10)),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Image(image: AssetImage('assets/images/car1.webp')),
+            SizedBox(
+              height: 25,
+            ),
+            Text(
+              '   Car Name',
+              style: TextStyle(fontFamily: semibold, fontSize: 17),
+            ),
+            Container(
+              margin: EdgeInsets.only(left: 10, right: 10),
+              width: double.infinity,
+              child: Container(
+                  child: ElevatedButton(
+                      onPressed: () {},
+                      child: Text('Bid Now'),
+                      style: ElevatedButton.styleFrom(
+                        primary: GlobalVariables.kPrimaryColor,
+                      ))),
+            )
+          ],
+        )),
+  );
 }
