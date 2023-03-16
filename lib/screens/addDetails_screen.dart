@@ -10,8 +10,13 @@ class AddDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Add details"),
-        backgroundColor: GlobalVariables.kPrimaryColor,
+        centerTitle: true,
+        title: Text(
+          'Add Details',
+          style: TextStyle(color: Colors.black, fontFamily: bold),
+        ),
+        iconTheme: IconThemeData(color: Colors.black),
+        elevation: 0,
       ),
       body: SingleChildScrollView(
         child: Column(

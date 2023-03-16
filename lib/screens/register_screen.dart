@@ -1,47 +1,12 @@
 import 'package:carbid_app/screens/login_screen.dart';
+import 'package:carbid_app/screens/otp_screen.dart';
+import 'package:carbid_app/screens/termsAndConditions.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 
 import '../constants.dart';
 import '../widgets/green_button.dart';
 import '../widgets/textfeilds.dart';
-
-// class RegisterScreen extends StatelessWidget {
-//   const RegisterScreen({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return SafeArea(
-//       child: Scaffold(
-//         backgroundColor: GlobalVariables.backgroundColor,
-//         appBar: AppBar(
-//           backgroundColor: GlobalVariables.kPrimaryColor,
-//           elevation: 0,
-//         ),
-//         body: SingleChildScrollView(
-//           child: Column(
-//             children: [
-//               Image(image: AssetImage('assets/images/logo.png')),
-//               Textfeilds(text: "First Name"),
-//               Textfeilds(text: "Last Name"),
-//               Textfeilds(text: "Email"),
-//               Textfeilds(text: "Phone"),
-//               Textfeilds(text: "City"),
-//               Textfeilds(text: "Zip code"),
-//               SizedBox(
-//                 height: 30,
-//               ),
-//               GreenButton(
-//                 text: "Register",
-//                 onPressed: () {},
-//               ),
-//             ],
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({Key? key}) : super(key: key);
@@ -58,13 +23,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
   late String _phone;
   late String _city;
   late String _zipCode;
+  bool isChecked = false;
 
   void _register() {
     final form = _formKey.currentState;
     if (form!.validate()) {
       // Registration logic
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => LoginScreen()));
+          context, MaterialPageRoute(builder: (context) => OtpScreen()));
     }
   }
 
@@ -176,6 +142,32 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 return null;
                               },
                               onSaved: (value) => _zipCode = value!),
+                          SizedBox(height: 20),
+                          Row(
+                            children: [
+                              Checkbox(
+                                value: isChecked,
+                                onChanged: (bool? value) {
+                                  setState(() {
+                                    isChecked = value ?? false;
+                                  });
+                                },
+                              ),
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              TermsAndConditionsScreen()));
+                                },
+                                child: Text(
+                                  '  I agree with the terms and conditions',
+                                  style: TextStyle(fontSize: 16),
+                                ),
+                              ),
+                            ],
+                          ),
                           SizedBox(height: 20),
                           Container(
                               width: 355,

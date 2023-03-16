@@ -9,8 +9,13 @@ class OffersScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text("Offers"),
-          backgroundColor: GlobalVariables.kPrimaryColor,
+          centerTitle: true,
+          title: Text(
+            'Offers',
+            style: TextStyle(color: Colors.black, fontFamily: bold),
+          ),
+          iconTheme: IconThemeData(color: Colors.black),
+          elevation: 0,
         ),
         body: SingleChildScrollView(
           child: Column(
