@@ -28,7 +28,6 @@ class OtpRepository {
       body: jsonEncode(
         <String, String>{
           'otp': otp,
-          'phone_number': phoneNumber,
         },
       ),
     );
