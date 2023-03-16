@@ -1,7 +1,7 @@
 import 'package:carbid_app/constants.dart';
-import 'package:carbid_app/screens/addDetails_screen.dart';
+import 'package:carbid_app/screens/ads_details_screen.dart';
 import 'package:carbid_app/screens/home_screen.dart';
-import 'package:carbid_app/screens/myAds_screen.dart';
+import 'package:carbid_app/screens/my_ads_screen.dart';
 import 'package:carbid_app/screens/offers_screen.dart';
 import 'package:carbid_app/screens/profile_screen.dart';
 import 'package:flutter/material.dart';

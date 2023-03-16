@@ -13,3 +13,15 @@
 //     notifyListeners();
 //   }
 // }
+import 'package:flutter/foundation.dart';
+
+class EmailProvider with ChangeNotifier, DiagnosticableTreeMixin {
+  String _email = '';
+
+  String get email => _email;
+
+  void updateEmail(String userEmail) {
+    _email = userEmail;
+    notifyListeners();
+  }
+}

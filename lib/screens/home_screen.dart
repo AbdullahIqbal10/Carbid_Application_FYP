@@ -61,32 +61,32 @@ class HomeScreen extends StatelessWidget {
               ),
               Row(
                 children: [
-                  home_tiles(),
-                  home_tiles(),
+                  HomeTiles(),
+                  HomeTiles(),
                 ],
               ),
               Row(
                 children: [
-                  home_tiles(),
-                  home_tiles(),
+                  HomeTiles(),
+                  HomeTiles(),
                 ],
               ),
               Row(
                 children: [
-                  home_tiles(),
-                  home_tiles(),
+                  HomeTiles(),
+                  HomeTiles(),
                 ],
               ),
               Row(
                 children: [
-                  home_tiles(),
-                  home_tiles(),
+                  HomeTiles(),
+                  HomeTiles(),
                 ],
               ),
               Row(
                 children: [
-                  home_tiles(),
-                  home_tiles(),
+                  HomeTiles(),
+                  HomeTiles(),
                 ],
               ),
             ],
@@ -113,7 +113,8 @@ Widget chips(String text) {
   );
 }
 
-Widget home_tiles() {
+// ignore: non_constant_identifier_names
+Widget HomeTiles() {
   return Expanded(
     child: Container(
         height: 200,
@@ -136,13 +137,12 @@ Widget home_tiles() {
             Container(
               margin: EdgeInsets.only(left: 10, right: 10),
               width: double.infinity,
-              child: Container(
-                  child: ElevatedButton(
-                      onPressed: () {},
-                      child: Text('Bid Now'),
-                      style: ElevatedButton.styleFrom(
-                        primary: GlobalVariables.kPrimaryColor,
-                      ))),
+              child: ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: GlobalVariables.kPrimaryColor,
+                  ),
+                  child: Text('Bid Now')),
             )
           ],
         )),
