@@ -11,36 +11,38 @@ class HomeScreen extends StatelessWidget {
       child: Scaffold(
         backgroundColor: GlobalVariables.backgroundColor,
         appBar: AppBar(
+          automaticallyImplyLeading: false,
             backgroundColor: GlobalVariables.backgroundColor,
             iconTheme: IconThemeData(color: Colors.black),
             elevation: 0,
-            actions: [
-              Container(
-                margin: EdgeInsets.all(10),
-                width: 300,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                child: TextField(
-                  onChanged: (value) => print(value),
-                  decoration: InputDecoration(
-                      contentPadding:
-                          EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-                      border: InputBorder.none,
-                      focusedBorder: InputBorder.none,
-                      enabledBorder: InputBorder.none,
-                      hintText: "Search product",
-                      prefixIcon: Icon(Icons.search)),
-                ),
+            title:SizedBox(
+              width: MediaQuery.of(context).size.width,
+              child: TextField(
+                onChanged: (value) => {
+                  
+                },
+                decoration: InputDecoration(
+                    contentPadding:
+                        EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                    border: InputBorder.none,
+                    focusedBorder: InputBorder.none,
+                    enabledBorder: InputBorder.none,
+                    hintText: "Search product",
+                    prefixIcon: Icon(Icons.search)),
               ),
-              IconButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => NotificationScreen()));
-                  },
-                  icon: Icon(Icons.notifications))
+            ),
+    
+            actions: [
+              Center(
+                child: IconButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => NotificationScreen()));
+                    },
+                    icon: Icon(Icons.notifications)),
+              )
             ]),
         body: SingleChildScrollView(
           child: Column(
@@ -59,32 +61,32 @@ class HomeScreen extends StatelessWidget {
               ),
               Row(
                 children: [
-                  home_tiles(),
-                  home_tiles(),
+                  HomeTiles(),
+                  HomeTiles(),
                 ],
               ),
               Row(
                 children: [
-                  home_tiles(),
-                  home_tiles(),
+                  HomeTiles(),
+                  HomeTiles(),
                 ],
               ),
               Row(
                 children: [
-                  home_tiles(),
-                  home_tiles(),
+                  HomeTiles(),
+                  HomeTiles(),
                 ],
               ),
               Row(
                 children: [
-                  home_tiles(),
-                  home_tiles(),
+                  HomeTiles(),
+                  HomeTiles(),
                 ],
               ),
               Row(
                 children: [
-                  home_tiles(),
-                  home_tiles(),
+                  HomeTiles(),
+                  HomeTiles(),
                 ],
               ),
             ],
@@ -111,7 +113,8 @@ Widget chips(String text) {
   );
 }
 
-Widget home_tiles() {
+// ignore: non_constant_identifier_names
+Widget HomeTiles() {
   return Expanded(
     child: Container(
         height: 200,
@@ -134,13 +137,12 @@ Widget home_tiles() {
             Container(
               margin: EdgeInsets.only(left: 10, right: 10),
               width: double.infinity,
-              child: Container(
-                  child: ElevatedButton(
-                      onPressed: () {},
-                      child: Text('Bid Now'),
-                      style: ElevatedButton.styleFrom(
-                        primary: GlobalVariables.kPrimaryColor,
-                      ))),
+              child: ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: GlobalVariables.kPrimaryColor,
+                  ),
+                  child: Text('Bid Now')),
             )
           ],
         )),

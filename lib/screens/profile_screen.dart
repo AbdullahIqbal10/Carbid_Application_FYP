@@ -6,17 +6,17 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(
-          iconTheme: IconThemeData(color: Colors.black),
-          elevation: 0,
-          title: Text(
-            "Profile",
-            style: TextStyle(color: Colors.black, fontFamily: bold),
-          ),
+    return Scaffold(
+      appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.black),
+        elevation: 0,
+        title: Text(
+          "Profile",
+          style: TextStyle(color: Colors.black, fontFamily: bold),
         ),
-        body: Column(
+      ),
+      body: SingleChildScrollView(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Stack(

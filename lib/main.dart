@@ -1,9 +1,13 @@
 import 'package:carbid_app/constants.dart';
+import 'package:carbid_app/provider.dart';
 import 'package:carbid_app/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MultiProvider(providers: [
+    ChangeNotifierProvider(create: (_) => EmailProvider()),
+  ], child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {

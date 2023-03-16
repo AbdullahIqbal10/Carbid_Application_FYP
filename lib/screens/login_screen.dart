@@ -2,11 +2,8 @@ import 'package:carbid_app/constants.dart';
 import 'package:carbid_app/screens/forgot_password.dart';
 import 'package:carbid_app/screens/nav_screen.dart';
 import 'package:carbid_app/screens/register_screen.dart';
-import 'package:carbid_app/widgets/green_button.dart';
-import 'package:carbid_app/widgets/textfeilds.dart';
 import 'package:flutter/material.dart';
 import 'package:email_validator/email_validator.dart';
-import 'home_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -98,7 +95,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   SizedBox(height: 20),
-                  Container(
+                  SizedBox(
                       width: 355,
                       height: 55,
                       child: ElevatedButton(
@@ -118,7 +115,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   SizedBox(height: 20),
-                  Container(
+                  SizedBox(
                       width: 355,
                       height: 55,
                       child: ElevatedButton(
