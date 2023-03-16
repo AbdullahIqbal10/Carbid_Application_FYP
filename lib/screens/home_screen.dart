@@ -11,36 +11,38 @@ class HomeScreen extends StatelessWidget {
       child: Scaffold(
         backgroundColor: GlobalVariables.backgroundColor,
         appBar: AppBar(
+          automaticallyImplyLeading: false,
             backgroundColor: GlobalVariables.backgroundColor,
             iconTheme: IconThemeData(color: Colors.black),
             elevation: 0,
-            actions: [
-              Container(
-                margin: EdgeInsets.all(10),
-                width: 300,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                child: TextField(
-                  onChanged: (value) => print(value),
-                  decoration: InputDecoration(
-                      contentPadding:
-                          EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-                      border: InputBorder.none,
-                      focusedBorder: InputBorder.none,
-                      enabledBorder: InputBorder.none,
-                      hintText: "Search product",
-                      prefixIcon: Icon(Icons.search)),
-                ),
+            title:SizedBox(
+              width: MediaQuery.of(context).size.width,
+              child: TextField(
+                onChanged: (value) => {
+                  
+                },
+                decoration: InputDecoration(
+                    contentPadding:
+                        EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                    border: InputBorder.none,
+                    focusedBorder: InputBorder.none,
+                    enabledBorder: InputBorder.none,
+                    hintText: "Search product",
+                    prefixIcon: Icon(Icons.search)),
               ),
-              IconButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => NotificationScreen()));
-                  },
-                  icon: Icon(Icons.notifications))
+            ),
+    
+            actions: [
+              Center(
+                child: IconButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => NotificationScreen()));
+                    },
+                    icon: Icon(Icons.notifications)),
+              )
             ]),
         body: SingleChildScrollView(
           child: Column(

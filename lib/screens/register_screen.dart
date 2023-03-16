@@ -1,10 +1,7 @@
 import 'package:carbid_app/screens/login_screen.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
-
-import '../constants.dart';
-import '../widgets/green_button.dart';
-import '../widgets/textfeilds.dart';
+import 'package:carbid_app/constants.dart';
 
 // class RegisterScreen extends StatelessWidget {
 //   const RegisterScreen({super.key});
@@ -163,19 +160,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             },
                             onSaved: (value) => _city = value!,
                           ),
-                          SizedBox(height: 20),
-                          TextFormField(
-                              decoration: InputDecoration(
-                                labelText: 'Zip Code',
-                                border: OutlineInputBorder(),
-                              ),
-                              validator: (value) {
-                                if (value == null || value.isEmpty) {
-                                  return 'Please enter your zip code';
-                                }
-                                return null;
-                              },
-                              onSaved: (value) => _zipCode = value!),
                           SizedBox(height: 20),
                           Container(
                               width: 355,
